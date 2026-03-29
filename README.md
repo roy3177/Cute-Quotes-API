@@ -8,7 +8,24 @@ A small and cute REST API for managing motivational quotes, built with Node.js a
 - Input validation with `express-validator`
 - Data persistence via a local JSON file (`quotes.json`)
 - Interactive API docs via Swagger UI
+## 👨‍💻 Author
 
+<p align="center">
+  <b>Roy Meoded</b><br>
+  Computer Science Student & Backend Developer 🚀
+</p>
+
+<p align="center">
+  <a href="https://github.com/roy3177">
+    <img src="https://img.shields.io/badge/GitHub-roy3177-black?logo=github" />
+  </a>
+  <a href="https://www.linkedin.com/in/YOUR_LINK">
+    <img src="https://img.shields.io/badge/LinkedIn-Roy%20Meoded-blue?logo=linkedin" />
+  </a>
+  <a href="mailto:roymeoded2512@gmail.com">
+    <img src="https://img.shields.io/badge/Email-contact-red?logo=gmail" />
+  </a>
+</p>
 ## Tech Stack
 
 - **Runtime:** Node.js
