@@ -1,0 +1,188 @@
+openapi: 3.0.3
+info:
+  title: Cute Quotes API
+  version: 1.0.0
+  description: A small and cute API for managing motivational quotes
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /quotes:
+    get:
+      summary: Get all quotes
+      responses:
+        '200':
+          description: A list of quotes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    text:
+                      type: string
+                      example: Stay pawsitive.
+                    author:
+                      type: string
+                      example: Cat
+
+    post:
+      summary: Create a new quote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - text
+                - author
+              properties:
+                text:
+                  type: string
+                  example: Believe in yourself.
+                author:
+                  type: string
+                  example: Fox
+      responses:
+        '201':
+          description: Quote created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 4
+                  text:
+                    type: string
+                    example: Believe in yourself.
+                  author:
+                    type: string
+                    example: Fox
+        '400':
+          description: Missing required fields
+
+  /quotes/{id}:
+    get:
+      summary: Get a quote by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Quote ID
+      responses:
+        '200':
+          description: A single quote
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  text:
+                    type: string
+                    example: Stay pawsitive.
+                  author:
+                    type: string
+                    example: Cat
+        '404':
+          description: Quote not found
+
+    put:
+      summary: Update a quote by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Quote ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - text
+                - author
+              properties:
+                text:
+                  type: string
+                  example: Never give up.
+                author:
+                  type: string
+                  example: Wolf
+      responses:
+        '200':
+          description: Quote updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Quote updated successfully
+                  updatedQuote:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      text:
+                        type: string
+                        example: Never give up.
+                      author:
+                        type: string
+                        example: Wolf
+        '400':
+          description: Missing required fields
+        '404':
+          description: Quote not found
+
+    delete:
+      summary: Delete a quote by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Quote ID
+      responses:
+        '200':
+          description: Quote deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Quote deleted successfully
+                  deletedQuote:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      text:
+                        type: string
+                        example: You are doing great.
+                      author:
+                        type: string
+                        example: Bear
+        '404':
+          description: Quote not found
