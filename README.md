@@ -19,7 +19,7 @@ A small and cute REST API for managing motivational quotes, built with Node.js a
   <a href="https://github.com/roy3177">
     <img src="https://img.shields.io/badge/GitHub-roy3177-black?logo=github" />
   </a>
-  <a href="https://www.linkedin.com/in/YOUR_LINK">
+  <a href="https://www.linkedin.com/in/roy-meoded-1704bb308/">
     <img src="https://img.shields.io/badge/LinkedIn-Roy%20Meoded-blue?logo=linkedin" />
   </a>
   <a href="mailto:roymeoded2512@gmail.com">
